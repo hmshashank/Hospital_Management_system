@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Patient Details</title>
+  <!-- <link rel="stylesheet" type="text/css" href="reset.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <style>
+    body {
+      background-color: #242f44;
+      color: white;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    h1 {
+      font-size: 36px;
+      padding: 15px;
+      color: #8c6b48;
+      background-color: white;
+    }
+
+    h2 {
+      font-size: 24px;
+      padding: 15px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 20px;
+      padding: 15px;
+      text-transform: uppercase;
+      text-align: left;
+      margin-left: 20px;
+      font-weight: 500;
+      line-height: 2.7;
+      letter-spacing: 0.8px;
+    }
+
+    th {
+      border: 2px solid #8c6b48;
+    }
+
+    table {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    td {
+      border: 2px solid #8c6b48;
+      width: 300px;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 5px;
+      background-color: #242f44;
+      z-index: 5;
+    }
+
+    footer h3 {
+      display: inline-block;
+      font-size: 14px;
+      background-color: #242f44;
+    }
+
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+      height: 800px;
+    }
+
+
+    .left {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Patient Details</h1>
+  </header>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">
+            <h1 id="pname"></h1>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <h2>PID</h2>
+          </th>
+          <th>
+            <h2 id="pid"></h2>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="left">
+            <h3>DOCTOR TREATED</h3>
+          </td>
+          <td>
+            <h3 id="dr_name"></h3>
+          </td>
+        </tr>
+        <!-- <tr>
+      <td class="left"><h3>ROOM NO.</h3></td>
+      <td><h3>1005</h3></td>
+    </tr> -->
+        <tr>
+          <td class="left">
+            <h3>ENTRY DATE</h3>
+          </td>
+          <td>
+            <h3 id="admission_date"></h3>
+          </td>
+
+
+        </tr>
+        <tr>
+          <td class="left">
+            <h3>ROOM NO</h3>
+          </td>
+          <td>
+            <h3 id="room"></h3>
+          </td>
+
+
+        </tr>
+        <!-- <tr>
+      <td class="left"><h3>Covid test result</h3></td>
+      <td><h3>Negative</h3></td>
+    </tr> -->
+        <!-- <tr>
+      <td class="left"><h3>EXPENSES</h3></td>
+      <td><h3>Rs 4999/-</h3></td>
+    </tr> -->
+      </tbody>
+    </table>
+
+  </div>
+
+  <footer>
+    <h3>Contact</h3>
+    <h3>Location</h3>
+    <h3>Privacy Policy</h3>
+  </footer>
+</body>
+<script>
+  fetch("/profiledata").then(function (data) {
+    return data.json()
+  }).then(function (dat) {
+    document.getElementById("pname").innerHTML = dat[0]["pname"];
+    document.getElementById("pid").innerHTML = dat[0]["pno"];
+    document.getElementById("dr_name").innerHTML = dat[0]["dr_name"];
+    document.getElementById("admission_date").innerHTML = dat[0]["admission_date"];
+    document.getElementById("room").innerHTML = dat[0]["room_no"]
+
+  })
+  // fetch("/getroom").then(function (data1) {
+
+  //     return data1.json()
+  //   }).then(function (dat1) {
+  //     document.getElementById("room").innerHTML = "hi"
+  //   })
+  console.log("im")
+</script>
+
+</html>

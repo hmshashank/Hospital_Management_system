@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead class="">
+            <tr>
+                <th scope="col">Student_name</th>
+                <th scope="col">Status</th>
+
+            </tr>
+        </thead>
+    </table>
+</body>
+<script>
+    var table = document.getElementsByTagName("table")[0];
+
+    fetch("./sample.txt").then(function (data) {
+        return data.text()
+    }).then(function (t) {
+        splited = t.split("\n");
+        for (i = 0; i < splited.length; i++) {
+
+            var newrow = table.insertRow(table.rows.length)
+            var cel1 = newrow.insertCell(0);
+            cel1.innerHTML = splited[i]
+            var cel2 = newrow.insertCell(1);
+            cel2.innerHTML = `        <input type="text" placeholder="enter status">
+`
+        }
+    })
+
+
+</script>
+
+</html>

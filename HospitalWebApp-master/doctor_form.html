@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      background-image: url("/Hospital_Management_system/public/doctor-entry2.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      font-size: 25px;
+      margin: 10px;
+        
+    }
+
+    .myclass {
+      border: 2px solid red;
+    }
+    button{
+        background-color: white;
+        box-sizing: border-box;
+        border: blue;
+        opacity:95%;
+        
+        border-radius: 2px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color:rgb(22, 19, 19);
+        padding: 5px;
+        box-shadow: 0 0 10px black;
+        margin-top: 100px;
+}
+
+    /* .bg { */
+    /* The image used */
+    /* background-image: url("./bg.jpg"); */
+
+    /* Full height */
+    /* height: 100%;  */
+
+    /* Center and scale the image nicely */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* } */
+  </style>
+</head>
+
+<body>
+
+  <h2>Doctor Registration Form</h2>
+
+  <form action="/doctorentry" method="POST" onchange="myfun()">
+    <label for="fname">Doctor Name:</label>
+    <input type="text" id="drname" name="drname" value="" required><br>
+    <!-- <label for="lname">Doctor ID:</label><br>
+      <input type="number" id="drid" name="drid" value=""><br> -->
+    <span id="errorforname"></span><br>
+    <label for="lname">Doctor qualification:</label>
+    <input type="text" id="drqu" name="drqu" value="" required><br>
+
+    <!-- <input type="submit" name="dr_sub" id="sub" value="Submit"> -->
+    <button type="submit" name="dr_sun" id=sub>submit</button>
+  </form>
+</body>
+<script>
+  function myfun() {
+    dr_name = document.getElementById("drname")
+    console.log(parseInt(dr_name.value))
+    if (Number.isInteger(parseInt(dr_name.value))) {
+      dr_name.classList.add("myclass")
+      document.getElementById("sub").disabled = true;
+      errforname = document.getElementById("errorforname")
+      errforname.textContent = "please enter a valid name"
+    } else {
+      dr_name.classList.remove("myclass")
+      document.getElementById("sub").disabled = false;
+      errforname.textContent = ""
+    }
+  }
+
+</script>
+
+</html>

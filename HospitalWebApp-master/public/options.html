@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+        .ownli {
+            background-color: wheat;
+            border-radius: 15px;
+            margin: 0px 15px;
+        }
+
+        body {
+            background-color: deepskyblue;
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default bg-primary ">
+        <a href="#" class="navbar-left">
+            <img src="./icons8-hospital-3-50.png" alt="">
+        </a>
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="./detailentry.html" id="pentry" class="ownli">Patient entry</a></li>
+                <li><a href="./viewPatient.html" id="vp" class="ownli">View Patient</a></li>
+                <li><a href="./doctor_form.html" id="dentry" class="ownli">Entry Doctor</a></li>
+            </ul>
+            <button class="navbar-btn btn btn-defult btn-success navbar-right">Help?</button>
+            <form class="navbar-form" action="/update" method="POST">
+                <input type="search" class="form-control" name="pid" placeholder="Update patient by Id">
+                <button type="submit" class="btn btn-default btn-success">Update</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-responsive  img-rounded" src="./patient_entry.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">INSERT PATIENT</h5>
+                    <p class="card-text">patient registration is a process by which a patient name and identity are
+                        enrolled into the records of the hospital.</p>
+                    <!-- <li><a href="./detailentry.html" id="pentry" class="ownli">Patient entry</a></li> -->
+
+                    <a href="./detailentry.html" class="btn btn-success">patient entry</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- <p>Sed ut perspiciatis...</p> -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-responsive img-rounded" src="./viewpatient.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">VIEW PATIENT RECORD</h5>
+                    <p class="card-text">This keeps the record of the patients basic information for security perpose
+                    </p>
+                    <a href="./viewPatient.html" class="btn btn-success">View Patient</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-responsive img-rounded" src="./doctor_entry2.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DOCTOR REGISTRATION</h5>
+                    <p class="card-text">Doctor registration is a process by which a Doctor name and qualifications are
+                        enrolled into the records of the hospital.</p>
+                    <a href="./doctor_form.html" class="btn btn-success">Entry Doctor</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-responsive img-rounded" src="./updatepatient.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">UPDATE PATIENT</h5>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p> -->
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <form class="navbar-form" action="/update" method="POST">
+                        <input type="search" class="form-control" name="pid" placeholder="Update patient by Id">
+                        <button type="submit" class="btn btn-default btn-success">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+
+</html>
